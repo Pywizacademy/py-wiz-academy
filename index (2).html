@@ -1,0 +1,1454 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYWIZ ACADEMY - IT Training & Courses</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+       body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f9fafc;   /* clean background */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 0.6rem 0;   /* slimmer navbar */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;  /* modern font */
+    letter-spacing: 1px;
+}
+
+.logo img {
+    height: 55px;
+    width: 55px;
+    object-fit: contain;   /* keeps the full logo visible */
+    border-radius: 50%;    /* circular shape */
+    background: white;
+    padding: 6px;          /* equal spacing inside */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* subtle depth */
+    display: block;
+}
+
+.logo-text {
+    font-size: 1.6rem;      
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif; 
+    color: #ffd700;         
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+.contact-quick {
+    display: flex;
+    gap: 18px;
+    font-size: 0.95rem;   /* little bigger contact/mail */
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.95;
+}
+
+
+/* Hero Section */
+.hero {
+   background: linear-gradient(90deg, #0f2027, #2c5364, #203a43);
+
+    color: white;
+    padding: 3.5rem 0;   /* little smaller */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;   /* smaller circle */
+    height: 250px;
+    background: #ffd700;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    opacity: 0.12;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 2.6rem;
+    font-weight: bold;
+    color: #ffd700;
+    margin: 1rem 0;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+        /* Courses Section */
+        .courses {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3c72;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .course-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #1e3c72;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .course-list {
+            list-style: none;
+        }
+
+        .course-list li {
+            padding: 0.5rem 0;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .course-list li::before {
+            content: "▶";
+            color: #1e3c72;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Detailed Course Cards */
+        .detailed-courses {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .detailed-course-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-left: 6px solid #1e3c72;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .detailed-course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .course-header h3 {
+            color: #1e3c72;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .course-badges {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .badge {
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .course-description {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .curriculum h4 {
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .curriculum-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .curriculum-section h5 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .curriculum-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .curriculum-section li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .curriculum-section li::before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .career-opportunities h4 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .career-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .career-tags span {
+            background: #e3f2fd;
+            color: #1e3c72;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            border: 1px solid #bbdefb;
+        }
+
+        /* Advantages Section */
+        .advantages {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .advantage-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            background: #f8f9fa;
+            transition: transform 0.3s ease;
+        }
+
+        .advantage-item:hover {
+            transform: translateY(-3px);
+            background: #e9ecef;
+        }
+
+        .advantage-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .advantage-item h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+
+        /* Offer Section */
+        .offer {
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .offer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .offer-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+
+        .discount-badge {
+            background: #1e3c72;
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Learning Path Section */
+        .learning-path {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .path-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            gap: 2rem;
+        }
+
+        .timeline-number {
+            background: #1e3c72;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .timeline-content h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+       
+
+        /* FAQ Section */
+        .faq {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+
+        .faq-question h3 {
+            margin: 0;
+            color: #1e3c72;
+            font-size: 1.1rem;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #1e3c72;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* Contact Section */
+                .contact {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #f1f1f1;
+            padding: 1.8rem 0;   /* smaller background */
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 850px;
+            margin: 0 auto;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            flex: 1 1 220px;
+            padding: 1rem;
+            border-left: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item:first-child {
+            border-left: none;   /* remove left border from first item */
+        }
+
+        .contact-item h3 {
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-item p {
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            opacity: 0.85;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item p:hover {
+            color: #ffd700;  /* hover effect for links/text */
+        }
+
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact-quick {
+                display: none;
+            }
+            
+            .offer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .offer-text {
+                font-size: 1.5rem;
+            }
+            
+            .discount-badge {
+                font-size: 2rem;
+                padding: 1.5rem;
+            }
+
+            .detailed-course-card {
+                padding: 2rem;
+            }
+            
+            .course-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .curriculum-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero {
+                padding: 2rem 0;
+            }
+            
+            .courses, .advantages {
+                padding: 2rem 0;
+            }
+            
+            .course-card, .advantage-item {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Updated to correct company logo -->
+                <div class="logo">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-20%20at%2011.24.09%20AM%20%281%29-BsEfsPagg3CkBVGNgeI0sY90sNoM9O.jpeg" alt="PYWIZ ACADEMY Logo" />
+                    <span class="logo-text">PYWIZ ACADEMY</span>
+                </div>
+                <div class="contact-quick">
+                    <span>📞 8667273152 , 8778117126</span>
+                    <span>✉️ pywizacademy2025@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Do You Want To Get IT Job?</h1>
+                <div class="hero-subtitle">ONLINE & OFFLINE<br>COURSES</div>
+                <p class="hero-description">
+                    Ready to enhance your skills? Our online/offline courses with more offers & flexible learning options.
+                    More <b>Workshops & Learning options</b>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Courses</h2>
+            <div class="detailed-courses">
+                <!-- Python Full Stack Development -->
+                <div class="detailed-course-card fade-in">
+                    <div class="course-header">
+                     <h3>
+                      <img src="https://www.python.org/static/opengraph-icon-200x200.png" 
+                      alt="Python Logo Dark" 
+                      style="height:50px; vertical-align:middle; margin-right:8px; background:#000; border-radius:8px; padding:4px;">
+
+                      Python Full Stack Development
+                      </h3>
+
+                        <div class="course-badges">
+                            <span class="badge duration">28 days - 2 Months</span>
+                            <span class="badge level">Beginner to Advanced</span>
+                        </div>
+                    </div>
+                    <p class="course-description">
+                        Master both frontend and backend development with Python. Build complete web applications from scratch using modern frameworks and tools.
+                    </p>
+                    <div class="curriculum">
+                        <h4>📚 Curriculum Highlights:</h4>
+                        <div class="curriculum-grid">
+                            <div class="curriculum-section">
+                                <h5>Frontend Technologies</h5>
+                                <ul>
+                                    <li>HTML5 & CSS3</li>
+                                    <li>JavaScript & ES6+</li>
+                                    <li>React.js </li>
+                                    <li>Bootstrap & Material UI</li>
+                                </ul>
+                            </div>
+                            <div class="curriculum-section">
+                                <h5>Backend Technologies</h5>
+                                <ul>
+                                    <li>Python Fundamentals</li>
+                                    <li>Django Framework</li>
+                                    <li>Flask & FastAPI</li>
+                                    <li>RESTful APIs</li>
+                                </ul>
+                            </div>
+                            <div class="curriculum-section">
+                                <h5>Database & Tools</h5>
+                                <ul>
+                                    <li>MySQL </li>
+                                    <li>Admin </li>
+                                    <li>Git & GitHub</li>
+                                    <li>Project Explanation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="career-opportunities">
+                        <h4>💼 Career Opportunities:</h4>
+                        <div class="career-tags">
+                            <span>Full Stack Developer</span>
+                            <span>Python Developer</span>
+                            <span>Web Developer</span>
+                            <span>Backend Developer</span>
+                            <span>Software Engineer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detailed-course-card fade-in">
+                <div class="course-header">
+                <h3>
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" 
+                 alt="Oracle Logo" 
+                 style="height:28px; vertical-align:middle; margin-right:8px;">
+                    Oracle Database & Development
+                </h3>
+                <div class="course-badges">
+                    <span class="badge duration">2 Months</span>
+                    <span class="badge level">Beginner To Advanced</span>
+                </div>
+                    </div>
+                    
+                    <p class="course-description">
+                        Master Oracle Database technologies, PL/SQL programming, and enterprise-level application development for real-world projects.
+                    </p>
+
+                    <div class="curriculum">
+                        <h4>📚 Curriculum Highlights:</h4>
+                        <div class="curriculum-grid">
+                            <div class="curriculum-section">
+                                <h5>Oracle Database</h5>
+                                <ul>
+                                    <li>SQL Fundamentals</li>
+                                    <li>Oracle PL/SQL Programming</li>
+                                    <li>Stored Procedures & Triggers</li>
+                                    <li>Data Engineer</li>
+                                </ul>
+                            </div>
+                            <div class="curriculum-section">
+                                <h5>Performance & Security</h5>
+                                <ul>
+                                    <li>Query Optimization</li>
+                                    <li>Indexing & Partitioning</li>
+                                    <li>Backup & Recovery</li>
+                                    <li>User & Role Management</li>
+                                </ul>
+                            </div>
+                            <div class="curriculum-section">
+                                <h5>Application Development</h5>
+                                <ul>
+                                    <li>Oracle APEX Development</li>
+                                    <li>Integration with Java & Python</li>
+                                    <li>Forms & Reports</li>
+                                    <li>Enterprise Application Design</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="career-opportunities">
+                        <h4>💼 Career Opportunities:</h4>
+                        <div class="career-tags">
+                            <span>Oracle Developer</span>
+                            <span>Database Administrator</span>
+                            <span>PL/SQL Programmer</span>
+                            <span>Application Developer</span>
+                            <span>Data Architect</span>
+                        </div>
+                    </div>
+                </div>
+
+
+       <div class="detailed-course-card fade-in">
+            <div class="course-header">
+                <h3>🧠 Artificial Intelligence & Data Science</h3>
+                <div class="course-badges">
+                <span class="badge duration">2 Months</span>
+                <span class="badge level">Beginner To Advanced</span>
+                </div>
+            </div>
+
+            <p class="course-description">
+                Master Artificial Intelligence and Data Science concepts to solve real-world problems using Machine Learning, Deep Learning, and advanced data analytics.
+            </p>
+
+            <div class="curriculum">
+                <h4>📚 Curriculum Highlights:</h4>
+                <div class="curriculum-grid">
+                
+                <div class="curriculum-section">
+                    <h5>Data Science Foundations</h5>
+                    <ul>
+                    <li>Python for Data Science</li>
+                    <li>Data Cleaning & Preprocessing</li>
+                    <li>Exploratory Data Analysis</li>
+                    <li>Statistical Methods</li>
+                    </ul>
+                </div>
+
+                <div class="curriculum-section">
+                    <h5>Artificial Intelligence</h5>
+                    <ul>
+                    <li>Supervised & Unsupervised Learning</li>
+                    <li>Neural Networks & Deep Learning</li>
+                    <li>Natural Language Processing</li>
+                    <li>Computer Vision</li>
+                    </ul>
+                </div>
+
+                <div class="curriculum-section">
+                    <h5>Tools & Applications</h5>
+                    <ul>
+                    <li>TensorFlow & PyTorch</li>
+                    <li>Scikit-Learn & Pandas</li>
+                    <li>Data Visualization (Matplotlib, Seaborn, Power BI)</li>
+                    <li>AI in Business & Healthcare</li>
+                    </ul>
+                </div>
+                
+                </div>
+            </div>
+
+            <div class="career-opportunities">
+                <h4>💼 Career Opportunities:</h4>
+                <div class="career-tags">
+                <span>AI Engineer</span>
+                <span>Data Scientist</span>
+                <span>Machine Learning Engineer</span>
+                <span>Business Analyst</span>
+                <span>Research Scientist</span>
+                </div>
+            </div>
+        </div>
+
+
+
+                    <div class="detailed-course-card fade-in">
+                    <div class="course-header">
+                        <h3>☁️ AWS Cloud Computing</h3>
+                        <div class="course-badges">
+                        <span class="badge duration">2 Months</span>
+                        <span class="badge level">Beginner To Advanced</span>
+                        </div>
+                    </div>
+
+                    <p class="course-description">
+                        Learn how to design, deploy, and manage applications on Amazon Web Services (AWS), the world’s leading cloud platform.
+                    </p>
+
+                    <div class="curriculum">
+                        <h4>📚 Curriculum Highlights:</h4>
+                        <div class="curriculum-grid">
+                        
+                        <div class="curriculum-section">
+                            <h5>Core AWS Services</h5>
+                            <ul>
+                            <li>EC2 (Virtual Servers)</li>
+                            <li>S3 (Cloud Storage)</li>
+                            <li>RDS & DynamoDB (Databases)</li>
+                            <li>VPC & Networking</li>
+                            </ul>
+                        </div>
+
+                        <div class="curriculum-section">
+                            <h5>Cloud Architecture</h5>
+                            <ul>
+                            <li>Scalable Applications</li>
+                            <li>Load Balancing & Auto Scaling</li>
+                            <li>Serverless with AWS Lambda</li>
+                            <li>Monitoring with CloudWatch</li>
+                            </ul>
+                        </div>
+
+                        <div class="curriculum-section">
+                            <h5>Security & DevOps</h5>
+                            <ul>
+                            <li>IAM & Access Management</li>
+                            <li>AWS Well-Architected Framework</li>
+                            <li>CI/CD with CodePipeline</li>
+                            <li>Cloud Security Best Practices</li>
+                            </ul>
+                        </div>
+                        
+                        </div>
+                    </div>
+
+                    <div class="career-opportunities">
+                        <h4>💼 Career Opportunities:</h4>
+                        <div class="career-tags">
+                        <span>AWS Cloud Engineer</span>
+                        <span>DevOps Engineer</span>
+                        <span>Cloud Architect</span>
+                        <span>Site Reliability Engineer</span>
+                        <span>Solutions Architect</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detailed-course-card fade-in">
+                    <div class="course-header">
+                        <h3>❄️ Snowflake Data Warehouse</h3>
+                        <div class="course-badges">
+                        <span class="badge duration">2 Months</span>
+                        <span class="badge level">Intermediate</span>
+                        </div>
+                    </div>
+
+                    <p class="course-description">
+                        Learn Snowflake, a modern cloud-based data warehouse platform, to manage big data, perform advanced analytics, and enable seamless data sharing across the cloud.
+                    </p>
+
+                    <div class="curriculum">
+                        <h4>📚 Curriculum Highlights:</h4>
+                        <div class="curriculum-grid">
+                        
+                        <div class="curriculum-section">
+                            <h5>Snowflake Basics</h5>
+                            <ul>
+                            <li>Introduction to Cloud Data Warehousing</li>
+                            <li>Snowflake Architecture</li>
+                            <li>Data Loading & Unloading</li>
+                            <li>Warehouses, Databases & Schemas</li>
+                            </ul>
+                        </div>
+
+                        <div class="curriculum-section">
+                            <h5>Data Management</h5>
+                            <ul>
+                            <li>SQL in Snowflake</li>
+                            <li>Time Travel & Data Cloning</li>
+                            <li>Partitioning & Clustering</li>
+                            <li>Performance Optimization</li>
+                            </ul>
+                        </div>
+
+                        <div class="curriculum-section">
+                            <h5>Advanced Features</h5>
+                            <ul>
+                            <li>Snowflake with BI Tools (Power BI, Tableau)</li>
+                            <li>Stored Procedures & UDFs</li>
+                            <li>Security & Access Control</li>
+                            <li>Data Sharing & Marketplace</li>
+                            </ul>
+                        </div>
+                        
+                        </div>
+                    </div>
+
+                    <div class="career-opportunities">
+                        <h4>💼 Career Opportunities:</h4>
+                        <div class="career-tags">
+                        <span>Snowflake Developer</span>
+                        <span>Data Engineer</span>
+                        <span>Data Analyst</span>
+                        <span>Cloud Data Architect</span>
+                        <span>ETL Developer</span>
+                        </div>
+                </div>
+
+            </div>
+
+
+
+
+
+                   <div class="detailed-course-card fade-in">
+                        <div class="course-header">
+                            <h3>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                                alt="React Logo"
+                                style="height:28px; vertical-align:middle; margin-right:8px;">
+                            React JS & UI/UX Design
+                            </h3>
+                            <div class="course-badges">
+                            <span class="badge duration"> 1 month </span>
+                            <span class="badge level">Beginner To Advanced</span>
+                            </div>
+                        </div>
+
+                        <p class="course-description">
+                            Build modern, responsive web apps with React while mastering UI/UX principles—wireframing, visual design, and user testing—to ship beautiful, usable products.
+                        </p>
+
+                        <div class="curriculum">
+                            <h4>📚 Curriculum Highlights:</h4>
+                            <div class="curriculum-grid">
+                            <div class="curriculum-section">
+                                <h5>React Fundamentals</h5>
+                                <ul>
+                                <li>JSX, Components & Props</li>
+                                <li>State, Effects & Hooks</li>
+                                <li>Routing with React Router</li>
+                                <li>Forms & Validation</li>
+                                </ul>
+                            </div>
+
+                            <div class="curriculum-section">
+                                <h5>Advanced React</h5>
+                                <ul>
+                                <li>Context API & State Management</li>
+                                <li>Performance Optimization</li>
+                                <li>API Integration (REST/GraphQL)</li>
+                                <li>Testing (Jest & React Testing Library)</li>
+                                </ul>
+                            </div>
+
+                            <div class="curriculum-section">
+                                <h5>UI/UX Design</h5>
+                                <ul>
+                                <li>Design Principles & Color/Type</li>
+                                <li>Wireframes & Prototypes (Figma)</li>
+                                <li>Responsive Layouts & Accessibility (a11y)</li>
+                                <li>Design Systems & Component Libraries</li>
+                                </ul>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="career-opportunities">
+                            <h4>💼 Career Opportunities:</h4>
+                            <div class="career-tags">
+                            <span>React Developer</span>
+                            <span>Frontend Developer</span>
+                            <span>UI Developer</span>
+                            <span>UI/UX Engineer</span>
+                            <span>Web Designer</span>
+                            </div>
+                        </div>
+                        </div>
+
+                
+
+                <!-- Computer Fundamentals -->
+                <div class="detailed-course-card fade-in">
+                    <div class="course-header">
+                        <h3>💻 Computer Fundamentals & Office</h3>
+                        <div class="course-badges">
+                            <span class="badge duration">28 days to 40 days </span>
+                            <span class="badge level">Beginner & Advanced</span>
+                        </div>
+                    </div>
+                    <p class="course-description">
+                        Build a strong foundation in computer basics and master essential office applications for professional productivity.
+                    </p>
+                    <div class="curriculum">
+                        <h4>📚 Curriculum Highlights:</h4>
+                        <div class="curriculum-grid">
+                            <div class="curriculum-section">
+                                <h5>Computer Basics</h5>
+                                <ul>
+                                    <li>Hardware & Software</li>
+                                    <li>Operating Systems</li>
+                                    <li>File Management</li>
+                                    <li>Internet & Email</li>
+                                </ul>
+                            </div>
+                            <div class="curriculum-section">
+                                <h5>MS Office Suite</h5>
+                                <ul>
+                                    <li>MS Word (Advanced)</li>
+                                    <li>MS Excel (Formulas & Charts)</li>
+                                    <li>MS PowerPoint</li>
+                                    <li>MS Access Basics</li>
+                                </ul>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="career-opportunities">
+                        <h4>💼 Career Opportunities:</h4>
+                        <div class="career-tags">
+                            <span>Office Assistant</span>
+                            <span>Data Entry Operator</span>
+                            <span>Administrative Assistant</span>
+                            <span>Customer Service</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="advantages">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Advantages</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item fade-in">
+                    <div class="advantage-icon">👨‍💻</div>
+                    <h3>Real Time Training By IT Experts</h3>
+                    <p>Learn from industry professionals with hands-on experience</p>
+                </div>
+                <div class="advantage-item fade-in">
+                    <div class="advantage-icon">🔄</div>
+                    <h3>Flexible Learning Options</h3>
+                    <p>Choose between online and offline modes as per your convenience</p>
+                </div>
+                <div class="advantage-item fade-in">
+                    <div class="advantage-icon">❓</div>
+                    <h3>Live Q&A Sessions</h3>
+                    <p>Interactive sessions with experts to clear all your doubts</p>
+                </div>
+                <div class="advantage-item fade-in">
+                    <div class="advantage-icon">🏆</div>
+                    <h3>Certification Assurance</h3>
+                    <p>Get certified upon successful completion of courses</p>
+                </div>
+                <div class="advantage-item fade-in">
+                    <div class="advantage-icon">💼</div>
+                    <h3>Project Explanation & Interview Support</h3>
+                    <p>Complete project guidance and interview preparation</p>
+                </div>
+                <div class="advantage-item fade-in">
+                    <div class="advantage-icon">💬</div>
+                    <h3>Communication Support</h3>
+                    <p>Continuous support throughout your learning journey</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title fade-in">Why Choose PYWIZ ACADEMY?</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Industry-Focused Curriculum</h3>
+                    <p>Our courses are designed based on current industry requirements and latest technology trends.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">👥</div>
+                    <h3>Small Batch Sizes</h3>
+                    <p>Limited students per batch ensuring personalized attention and better learning outcomes.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">💻</div>
+                    <h3>Hands-on Projects</h3>
+                    <p>Work on real-world projects that you can showcase in your portfolio to potential employers.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🚀</div>
+                    <h3>  Interview & internship Support</h3>
+                    <p>Resume building, interview preparation, and interview support </p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Lifetime Access</h3>
+                    <p>Get lifetime access to course materials and updates even after course completion.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Flexible Timings</h3>
+                    <p>Weekend and evening batches available to accommodate working professionals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Path Section -->
+    <section class="learning-path">
+        <div class="container">
+            <h2 class="section-title fade-in">Your Learning Journey</h2>
+            <div class="path-timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3>Assessment & Enrollment</h3>
+                        <p>Free skill assessment and course counseling to choose the right path for your career goals.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3>Foundation Building</h3>
+                        <p>Start with fundamentals and gradually progress to advanced concepts with practical examples.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3>Hands-on Practice</h3>
+                        <p>Work on live projects, assignments, and case studies to reinforce your learning.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3>Portfolio Development</h3>
+                        <p>Build impressive projects for your portfolio with guidance from industry experts.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">5</div>
+                    <div class="timeline-content">
+                        <h3>Certification & Job Support</h3>
+                        <p>Get certified and receive comprehensive job placement assistance including interview prep.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>What are the prerequisites for Python Full Stack Development?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No prior programming experience required! We start from basics and gradually build up to advanced concepts. Basic computer knowledge is sufficient.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>Do you provide job placement assistance?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p> We provide comprehensive support including resume building, interview preparation, mock interviews, internship.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>What is the difference between online and offline classes?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Both modes cover the same curriculum. Online classes offer flexibility while offline classes provide face-to-face interaction. You can choose based on your preference and schedule.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>Are there any installment options for course fees?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer flexible payment options including installments. Contact us to discuss a payment plan that works for your budget.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>Will I get a certificate after course completion?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You'll receive an industry-recognized certificate upon successful completion of the course, which you can add to your LinkedIn profile and resume.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white; margin-bottom: 3rem;">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-item fade-in">
+                    <br><h3> 📞Contacts </h3>
+                    <p>8778117126 , 8667273152</p>
+                    
+                </div>
+                <div class="contact-item fade-in">
+                    <br><h3>✉️ More Details </h3>
+                    <p>pywizacademy2025@gmail.com</p>
+                    <!-- Load Font Awesome once -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+                    <a href="https://www.youtube.com/@PywizAcademy/featured" style="color:white;" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a><br>
+
+                    <a href="https://www.instagram.com/pywiz_academy?igsh=ZHpxM2x6eTM3eGMw" style="color:white;" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a><br>
+
+                    <a href="https://www.facebook.com/profile.php?id=61579896140486" style="color:white;" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a><br>
+
+                    <a href="https://www.linkedin.com/company/107768364/admin/inbox/" style="color:white;" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a><br>
+
+                    <a href="https://www.google.com/maps/place/Pywiz+Academy/@8.7102407,77.4149622,17z/data=!3m1!4b1!4m6!3m5!1s0x3b0439bd762d43c3:0x1ffd012a507e01ce!8m2!3d8.7102407!4d77.4175371!16s%2Fg%2F11xsnh2g1w?entry=ttu&g_ep=EgoyMDI1MDgxNy4wIKXMDSoASAFQAw%3D%3D" style="color:white;" target="_blank"><i class="fa-brands fa-google"></i> Google Maps</a>
+
+
+                </div>
+                <div class="contact-item fade-in">
+                    <br><h3>📍Location</h3>
+                    <p>Bharathi Complex,</p>
+                    <p>Agasthiyarpatti Main Rd,</p>
+                    <p>Ambasamudram-627425</p>
+                    <p>Tirunelveli</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add some interactive effects
+        document.querySelectorAll('.course-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.borderLeftColor = '#ffd700';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.borderLeftColor = '#1e3c72';
+            });
+        });
+
+        // Add click effect to advantage items
+        document.querySelectorAll('.advantage-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-3px)';
+                }, 150);
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(30, 60, 114, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll to sections
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
